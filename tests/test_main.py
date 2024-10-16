@@ -1,6 +1,8 @@
 import pytest
-from selenium.webdriver.chrome.service import Service
+import time
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.main_page import MainPage
 from utilities.logger import Log_maker
 
@@ -21,10 +23,18 @@ def driver():
     
     driver.quit()
 
-def test_agree_button(driver):
+def test_agree_button_cookies(driver):
     main_page = MainPage(driver)
-    main_page.click_agree_cookie
+    main_page.click_agree_cookie()
     logger.info("*********Agree button successfully clicked*********")
+    
+    #Need to refresh driver to allow cookies to come in
+    driver.refresh()
    
-    assert True
+    
+   # Retrieve cookies via JavaScript, Seleniums get.cookies() function wasn't working
+    cookies_js = driver.execute_script("return document.cookie")
+    logger.info(f"Cookies retrieved via JavaScript: {cookies_js}")
+    
+    logger.info(f"Length of cookie string: {len(cookies_js)}")
     
