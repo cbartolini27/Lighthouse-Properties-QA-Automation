@@ -1,0 +1,17 @@
+2024-10-17 11:31:36:INFO:*********Setting up WebDriver*********
+2024-10-17 11:31:39:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-17 11:31:39:INFO:*********Agree button successfully clicked*********
+2024-10-17 11:31:40:INFO:*********Cookies retrieved: [{'domain': 'www.lighthouseproperties.lv', 'expiry': 1760715099, 'httpOnly': False, 'name': 'ga-disable', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'false'}, {'domain': 'www.lighthouseproperties.lv', 'httpOnly': False, 'name': 'localConsent', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}]*********
+2024-10-17 11:31:40:INFO:*********Length of cookie string: 2*********
+2024-10-17 11:31:40:INFO:*********'ga-disable' cookie is set correctly!*********
+2024-10-17 11:31:40:INFO:*********'localConsent' cookie is set correctly!*********
+2024-10-17 11:31:46:INFO:*********Setting up WebDriver*********
+2024-10-17 11:31:48:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-17 11:31:48:INFO:*********Reject button successfully clicked*********
+2024-10-17 11:31:49:INFO:*********Cookies retrieved: []*********
+2024-10-17 11:31:49:INFO:*********Length of cookie string: 0*********
+2024-10-17 11:31:49:INFO:*********Cookies successfully rejected*********
+2024-10-17 11:31:56:INFO:*********Setting up WebDriver*********
+2024-10-17 11:31:58:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-17 11:32:01:INFO:*********Privacy policy successfully clicked*********
+2024-10-17 11:32:01:INFO:*********Successfully opened privacy policy page*********

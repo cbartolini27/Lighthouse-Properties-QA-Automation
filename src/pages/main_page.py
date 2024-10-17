@@ -11,8 +11,12 @@ class BasePage(object):
 
 class MainPage(BasePage):
     
-    def is_title_matches(self):
-        return "Lighthouse Properties nekustamo īpašumu aģentūra" in self.driver.title
+    #Extension of basepage, Returns true if PRIVĀTUMA POLITIKA is in webpage
+    def privacy_policy_heading_matches(self):
+        element = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.CLASS_NAME, 'privacy-policy-description-heading'))
+        )
+        return "PRIVĀTUMA POLITIKA" in element.text
     
     def click_agree_cookie(self):
         # Wait until the button is clickable
@@ -28,6 +32,14 @@ class MainPage(BasePage):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(locator.MainPageLocators.REJECT_COOKIE_BUTTON)
         )
-        
+     
         element = self.driver.find_element(*locator.MainPageLocators.REJECT_COOKIE_BUTTON)
+        self.driver.execute_script("arguments[0].click();", element)
+    
+    def click_privacy_policy(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator.MainPageLocators.PRIVACY_POLICY_LINK)
+        )
+        
+        element = self.driver.find_element(*locator.MainPageLocators.PRIVACY_POLICY_LINK)
         self.driver.execute_script("arguments[0].click();", element)

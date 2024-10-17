@@ -55,9 +55,25 @@ def test_reject_button_cookies(driver):
     logger.info(f"*********Length of cookie string: {len(cookies)}*********")
     
     if len(cookies) == 0:
-        logger.info(f"*********Cookies successfully rejected*********")
+        logger.info("*********Cookies successfully rejected*********")
         assert True, "Cookies successfully rejected"
     else:
-        logger.info(f"*********Cookies not successfully rejected*********")
+        logger.info("*********Cookies not successfully rejected*********")
         assert False, "Cookies not successfully rejected"
+
+def test_privacy_policy_page(driver):
+    mainPage = MainPage(driver)
+    time.sleep(3)
+    mainPage.click_privacy_policy()
+    logger.info("*********Privacy policy successfully clicked*********")
+    
+    if mainPage.privacy_policy_heading_matches():
+        logger.info("*********Successfully opened privacy policy page*********")
+        assert True, "Successfully opened privacy policy page"
+    else: 
+        logger.info("*********Privacy policy page did not open successfully*********")
+        assert False, "Privacy policy page did not open successfully"
+  
+
+
     
