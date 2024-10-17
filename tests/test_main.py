@@ -31,10 +31,33 @@ def test_agree_button_cookies(driver):
     #Need to refresh driver to allow cookies to come in
     driver.refresh()
    
+    cookies = driver.get_cookies()  # This returns a list of dictionaries, each representing a cookie
+    logger.info(f"*********Cookies retrieved: {cookies}*********")
+    logger.info(f"*********Length of cookie string: {len(cookies)}*********")
     
-   # Retrieve cookies via JavaScript, Seleniums get.cookies() function wasn't working
-    cookies_js = driver.execute_script("return document.cookie")
-    logger.info(f"Cookies retrieved via JavaScript: {cookies_js}")
+    assert any(cookie['name'] == 'ga-disable' and cookie['value'] == 'false' for cookie in cookies), "Cookie 'ga-disable' not set correctly"
+    logger.info("*********'ga-disable' cookie is set correctly!*********")
+
+    # Assert for another specific cookie if needed
+    assert any(cookie['name'] == 'localConsent' and cookie['value'] == 'true' for cookie in cookies), "Cookie 'localConsent' not set correctly"
+    logger.info("*********'localConsent' cookie is set correctly!*********")
+
+def test_reject_button_cookies(driver):
+    main_page = MainPage(driver)
+    main_page.click_reject_cookie()
+    logger.info("*********Reject button successfully clicked*********")
     
-    logger.info(f"Length of cookie string: {len(cookies_js)}")
+    #Need to refresh driver to allow cookies to come in
+    driver.refresh()
+   
+    cookies = driver.get_cookies()  # This returns a list of dictionaries, each representing a cookie
+    logger.info(f"*********Cookies retrieved: {cookies}*********")
+    logger.info(f"*********Length of cookie string: {len(cookies)}*********")
+    
+    if len(cookies) == 0:
+        logger.info(f"*********Cookies successfully rejected*********")
+        assert True, "Cookies successfully rejected"
+    else:
+        logger.info(f"*********Cookies not successfully rejected*********")
+        assert False, "Cookies not successfully rejected"
     
