@@ -61,12 +61,20 @@ def test_reject_button_cookies(driver):
         logger.info("*********Cookies not successfully rejected*********")
         assert False, "Cookies not successfully rejected"
 
-def test_privacy_policy_page(driver):
+
+@pytest.mark.parametrize("click_method, link_text", [
+    ('click_privacy_policy', 'privātuma politiku'),
+    ('click_privacy_policy_second', 'Lasīt privātuma politiku')
+])
+def test_privacy_policy_page(driver, click_method, link_text):
     mainPage = MainPage(driver)
     time.sleep(3)
-    mainPage.click_privacy_policy()
-    logger.info("*********Privacy policy successfully clicked*********")
+   
+    #Dynamically call the click_method
+    getattr(mainPage, click_method)()
+    logger.info(f"*********{click_method} successfully clicked: {link_text}*********")
     
+    time.sleep(3)
     if mainPage.privacy_policy_heading_matches():
         logger.info("*********Successfully opened privacy policy page*********")
         assert True, "Successfully opened privacy policy page"
@@ -74,6 +82,86 @@ def test_privacy_policy_page(driver):
         logger.info("*********Privacy policy page did not open successfully*********")
         assert False, "Privacy policy page did not open successfully"
   
-
-
+def test_to_seller_link(driver):
+    mainPage = MainPage(driver)
+    mainPage.click_agree_cookie()
     
+    if mainPage.click_to_the_seller_link():
+        logger.info("*********Successfully opened seller page*********")
+        assert True, "Successfully opened privacy seller page"
+    else:
+        logger.info("*********Seller page did not open successfully*********")
+        assert False, "Seller page did not open successfully"
+  
+def test_to_buyer_link(driver):
+    mainPage = MainPage(driver)
+    mainPage.click_agree_cookie()
+    
+    if mainPage.click_to_the_buyer_link():
+        logger.info("*********Successfully opened buyer page*********")
+        assert True, "Successfully opened privacy buyer page"
+    else:
+        logger.info("*********Buyer page did not open successfully*********")
+        assert False, "Buyer page did not open successfully"
+  
+def test_about_us_link(driver):
+    mainPage = MainPage(driver)
+    mainPage.click_agree_cookie()
+
+    time.sleep(5)
+    if mainPage.click_to_about_us_link:
+        logger.info("*********Successfully opened about us page*********")
+        assert True, "Successfully opened about us page"
+    else:
+        logger.info("*********About us page did not open successfully*********")
+        assert False, "About us page did not open successfully"
+
+
+def test_properties_load(driver):
+    mainPage = MainPage(driver)
+    min_per_page = 1
+    max_per_page = 6
+    mainPage.click_agree_cookie()
+    
+    total_pages = mainPage.get_property_page_count() 
+    
+    #Forward navigation check
+    logger.info("*********Forward navigation check*********")
+    for i in range(0, total_pages):
+        number_of_properties = mainPage.count_property_cards() 
+        
+        if  number_of_properties >= min_per_page and number_of_properties <= max_per_page: 
+            logger.info(f"*********Page {i + 1} has the correct number of properties = {number_of_properties}*********")
+            assert True
+        elif number_of_properties > max_per_page:
+            logger.info(f"*********Page {i + 1} has too many properties = {number_of_properties}*********")
+            assert False, f"Too many properties on page {i + 1}: {number_of_properties}"
+        elif number_of_properties < min_per_page:
+            logger.info(f"*********Page {i + 1} has too few properties = {number_of_properties}*********")
+            assert False, f"Too few properties on page {i + 1}: {number_of_properties}"
+        
+        #- 1 to total pages because we dont want to click past the last page
+        if i < total_pages - 1:
+            mainPage.click_next_property_page()
+       
+    logger.info("*********Forward navigation passed*********")
+    
+    #Begin backward navigation
+    logger.info("*********Beginning backward navigation*********")
+    for i in range(total_pages -1, -1, -1):
+        number_of_properties = mainPage.count_property_cards()  # Get number of properties on the current page
+
+        if min_per_page <= number_of_properties <= max_per_page:
+            logger.info(f"*********Page {i + 1} has the correct number of properties = {number_of_properties}*********")
+            assert True
+        elif number_of_properties > max_per_page:
+            logger.info(f"*********Page {i + 1} has too many properties = {number_of_properties}*********")
+            assert False, f"Too many properties on page {i + 1}: {number_of_properties}"
+        elif number_of_properties < min_per_page:
+            logger.info(f"*********Page {i + 1} has too few properties = {number_of_properties}*********")
+            assert False, f"Too few properties on page {i + 1}: {number_of_properties}"
+
+        # Don't click previous arrow on the first page
+        if i > 0:
+            mainPage.click_previous_property_page()
+    logger.info("*********Backward navigation passed*********")
