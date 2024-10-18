@@ -117,12 +117,21 @@ def test_about_us_link(driver):
         assert False, "About us page did not open successfully"
 
 
-def test_properties_load(driver):
+@pytest.mark.parametrize("click_method, property_type", [
+    ('click_property_type_privatmajas','Privātmājas'),
+    ('click_property_type_dzivokli','Dzīvokļi'),
+    ('click_property_type_komercipasumi','Komercīpašumi'),
+    ('click_property_type_zemes','Zemes')
+])
+def test_properties_load(driver, click_method, property_type):
     mainPage = MainPage(driver)
     min_per_page = 1
     max_per_page = 6
     mainPage.click_agree_cookie()
     
+    #Allows for different property types to get tested
+    getattr(mainPage, click_method)()
+    logger.info(f"*********{click_method} successfully clicked: {property_type}*********")
     total_pages = mainPage.get_property_page_count() 
     
     #Forward navigation check

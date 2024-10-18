@@ -117,3 +117,31 @@ class MainPage(BasePage):
         # page_count_text text format example, its in Latvian: (lapa1no3) 
         total_pages = page_count_text.split("no")[1].strip().replace(")", "") #split method splits into a list of substrings, [1] gets '3)', strip removes all white spaces, replace(), removes all instances of ')' with another string, in this case ""
         return int(total_pages)
+    
+    def click_property_type_privatmajas(self):
+        privatmajas_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator.MainPageLocators.PRIVATMAJAS_BUTTON)
+        )
+        privatmajas_button.click()
+ 
+    def click_property_type_dzivokli(self):
+        dzivokli_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator.MainPageLocators.DZIVOKLI_BUTTON)
+        )
+        dzivokli_button.click()
+   
+    def click_property_type_komercipasumi(self):
+        komercipasumi_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator.MainPageLocators.KOMERCIPASUMI_BUTTON)
+        )
+        komercipasumi_button.click()
+    
+    def click_property_type_zemes(self):
+        zemes_button = WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable(locator.MainPageLocators.ZEMES_BUTTON)
+        )
+        zemes_button.click()
+        
+    
+
+    

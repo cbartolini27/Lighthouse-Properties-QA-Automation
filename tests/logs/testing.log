@@ -1,14 +1,48 @@
-2024-10-18 16:46:04:INFO:*********Setting up WebDriver*********
-2024-10-18 16:46:06:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
-2024-10-18 16:46:06:INFO:*********Forward navigation check*********
-2024-10-18 16:46:07:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-10-18 16:46:07:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-10-18 16:46:08:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-10-18 16:46:08:INFO:*********Page 4 has the correct number of properties = 1*********
-2024-10-18 16:46:08:INFO:*********Forward navigation passed*********
-2024-10-18 16:46:08:INFO:*********Beginning backward navigation*********
-2024-10-18 16:46:08:INFO:*********Page 4 has the correct number of properties = 1*********
-2024-10-18 16:46:08:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-10-18 16:46:08:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-10-18 16:46:08:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-10-18 16:46:08:INFO:*********Backward navigation passed*********
+2024-10-18 17:26:34:INFO:*********Setting up WebDriver*********
+2024-10-18 17:26:37:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-18 17:26:37:INFO:*********click_property_type_privatmajas successfully clicked: Priv\u0101tm\u0101jas*********
+2024-10-18 17:26:37:INFO:*********Forward navigation check*********
+2024-10-18 17:26:37:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Page 4 has the correct number of properties = 1*********
+2024-10-18 17:26:38:INFO:*********Forward navigation passed*********
+2024-10-18 17:26:38:INFO:*********Beginning backward navigation*********
+2024-10-18 17:26:38:INFO:*********Page 4 has the correct number of properties = 1*********
+2024-10-18 17:26:38:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:26:38:INFO:*********Backward navigation passed*********
+2024-10-18 17:26:45:INFO:*********Setting up WebDriver*********
+2024-10-18 17:26:47:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-18 17:26:47:INFO:*********click_property_type_dzivokli successfully clicked: Dz\u012bvok\u013ci*********
+2024-10-18 17:26:47:INFO:*********Forward navigation check*********
+2024-10-18 17:26:48:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:26:48:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-10-18 17:26:49:INFO:*********Page 3 has the correct number of properties = 5*********
+2024-10-18 17:26:49:INFO:*********Forward navigation passed*********
+2024-10-18 17:26:49:INFO:*********Beginning backward navigation*********
+2024-10-18 17:26:49:INFO:*********Page 3 has the correct number of properties = 5*********
+2024-10-18 17:26:49:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-10-18 17:26:49:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:26:49:INFO:*********Backward navigation passed*********
+2024-10-18 17:26:56:INFO:*********Setting up WebDriver*********
+2024-10-18 17:26:58:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-18 17:26:58:INFO:*********click_property_type_komercipasumi successfully clicked: Komerc\u012bpašumi*********
+2024-10-18 17:26:58:INFO:*********Forward navigation check*********
+2024-10-18 17:26:59:INFO:*********Page 1 has the correct number of properties = 4*********
+2024-10-18 17:26:59:INFO:*********Forward navigation passed*********
+2024-10-18 17:26:59:INFO:*********Beginning backward navigation*********
+2024-10-18 17:26:59:INFO:*********Page 1 has the correct number of properties = 4*********
+2024-10-18 17:26:59:INFO:*********Backward navigation passed*********
+2024-10-18 17:27:05:INFO:*********Setting up WebDriver*********
+2024-10-18 17:27:07:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-10-18 17:27:07:INFO:*********click_property_type_zemes successfully clicked: Zemes*********
+2024-10-18 17:27:07:INFO:*********Forward navigation check*********
+2024-10-18 17:27:08:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:27:09:INFO:*********Page 2 has the correct number of properties = 3*********
+2024-10-18 17:27:09:INFO:*********Forward navigation passed*********
+2024-10-18 17:27:09:INFO:*********Beginning backward navigation*********
+2024-10-18 17:27:09:INFO:*********Page 2 has the correct number of properties = 3*********
+2024-10-18 17:27:09:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-10-18 17:27:09:INFO:*********Backward navigation passed*********
