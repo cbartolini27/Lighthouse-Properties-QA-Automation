@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.main_page import MainPage
+from src.pages.property_page import PropertyPage
 from utilities.logger import Log_maker
 
 
@@ -81,14 +82,27 @@ def test_privacy_policy_page(driver, click_method, link_text):
     else: 
         logger.info("*********Privacy policy page did not open successfully*********")
         assert False, "Privacy policy page did not open successfully"
-  
+
+def test_home_button(driver):
+    main_page = MainPage(driver)
+    main_page.click_agree_cookie()
+    main_page.click_to_about_us_link()
+    
+
+    if main_page.click_home_page():
+        logger.info("*********Successfully navigated to home page*********")
+        assert True
+    else: 
+        logger.info("*********Navigation to home page unsuccessful*********")
+        assert False, "Navigation to home page unsuccessful"
+    
 def test_to_seller_link(driver):
     mainPage = MainPage(driver)
     mainPage.click_agree_cookie()
     
     if mainPage.click_to_the_seller_link():
         logger.info("*********Successfully opened seller page*********")
-        assert True, "Successfully opened privacy seller page"
+        assert True
     else:
         logger.info("*********Seller page did not open successfully*********")
         assert False, "Seller page did not open successfully"
@@ -99,7 +113,7 @@ def test_to_buyer_link(driver):
     
     if mainPage.click_to_the_buyer_link():
         logger.info("*********Successfully opened buyer page*********")
-        assert True, "Successfully opened privacy buyer page"
+        assert True
     else:
         logger.info("*********Buyer page did not open successfully*********")
         assert False, "Buyer page did not open successfully"
@@ -108,10 +122,10 @@ def test_about_us_link(driver):
     mainPage = MainPage(driver)
     mainPage.click_agree_cookie()
 
-    time.sleep(5)
+    
     if mainPage.click_to_about_us_link:
         logger.info("*********Successfully opened about us page*********")
-        assert True, "Successfully opened about us page"
+        assert True
     else:
         logger.info("*********About us page did not open successfully*********")
         assert False, "About us page did not open successfully"
@@ -174,3 +188,35 @@ def test_properties_load(driver, click_method, property_type):
         if i > 0:
             mainPage.click_previous_property_page()
     logger.info("*********Backward navigation passed*********")
+
+def test_img_duplicates(driver):
+    main_page = MainPage(driver)
+    property_page = PropertyPage(driver)
+    main_page.click_agree_cookie()
+    property_page.click_first_property()
+    
+    num_images = property_page.get_num_property_images()
+    logger.info(f"*********Number of property images: {num_images}*********")
+     
+    #Getting the src info of each image then storing into a list
+    src_li = []
+    for img in range(num_images):
+        img_src = property_page.get_selected_img()
+        src_li.append(img_src)
+        
+        if (img + 1) != num_images:
+            property_page.click_right_button()
+
+    logger.info(f"*********Src for each img: {src_li}*********")
+    
+    #Checking for duplicate images using their src info previously stored in src_li list. Using set b/c O(1) and allows no duplicates
+    seen = set()
+    for src in src_li:
+        if src not in seen:
+            seen.add(src)
+        else:
+            logger.info(f"*********You have duplicate images for img: {src}*********")
+            assert False, 'You have duplicate images in the same image container!'
+    
+    logger.info("*********You have no duplicates in images for img*********")
+        

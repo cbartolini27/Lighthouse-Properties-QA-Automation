@@ -6,12 +6,15 @@ from src import locator
 
 
 
+
 class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
 
 class MainPage(BasePage):
-    
+    '''
+    Inital Prompts - ADD REASON FOR THESE
+    '''
     def click_agree_cookie(self):
         # Wait until the button is clickable
         WebDriverWait(self.driver, 10).until(
@@ -46,13 +49,26 @@ class MainPage(BasePage):
         element = self.driver.find_element(*locator.MainPageLocators.PRIVACY_POLICY_LINK_SECOND)
         self.driver.execute_script("arguments[0].click();", element)
     
-    #Extension of basepage, Returns true if PRIVĀTUMA POLITIKA is in webpage
     def privacy_policy_heading_matches(self):
         element = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located((By.CLASS_NAME, 'privacy-policy-description-heading'))
         )
         return "PRIVĀTUMA POLITIKA" in element.text
     
+    '''
+    Navigation bar features - ADD REASON FOR THESE
+    '''
+    def click_home_page(self):
+        home_button = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator.MainPageLocators.HOME_PAGE_BUTTON)
+        )
+        home_button.click()
+        
+        home_page = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.CLASS_NAME, "property-list-header"))
+        )
+        return "Īpašumi pārdošanā" in home_page.text
+        
     def click_to_the_seller_link(self):
         seller_link = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator.MainPageLocators.TO_THE_SELLER_LINK)
@@ -79,7 +95,6 @@ class MainPage(BasePage):
          about_link = WebDriverWait(self.driver, 10).until(
             EC.visibility_of_element_located(locator.MainPageLocators.ABOUT_US_LINK)
         )
-        
          about_link.click() 
         
          about_list_header = WebDriverWait(self.driver, 10).until(
@@ -87,6 +102,10 @@ class MainPage(BasePage):
         )
          return "Mūsu filozofija" in about_list_header.text 
     
+    
+    '''
+    Property filter section - ADD REASON FOR THESE 
+    '''
     def click_next_property_page(self):
         arrow_button = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(locator.MainPageLocators.NEXT_PROPERTY_PAGE_BUTTON)
@@ -140,8 +159,5 @@ class MainPage(BasePage):
         zemes_button = WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(locator.MainPageLocators.ZEMES_BUTTON)
         )
-        zemes_button.click()
-        
-    
-
+        zemes_button.click()     
     
