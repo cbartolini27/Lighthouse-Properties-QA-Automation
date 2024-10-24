@@ -219,4 +219,31 @@ def test_img_duplicates(driver):
             assert False, 'You have duplicate images in the same image container!'
     
     logger.info("*********You have no duplicates in images for img*********")
-        
+
+#Checks to see if there are any invalid or missing tel: URI scheme for each contact card
+def test_contact_cards_phone(driver):
+    main_page = MainPage(driver)
+    main_page.click_agree_cookie()
+    contact_card_info = main_page.get_contact_cards_phone()
+
+    if contact_card_info.startswith('Missing'): 
+        logger.info(f"*********{contact_card_info}*********")
+        assert False, 'Missing valid phone number tel: URI scheme in a contact card'
+    elif contact_card_info.startswith('All'):
+        logger.info("*********All contact cards have valid tel: URI scheme*********")
+        assert True
+
+#Checks to see if there are any invalid or missing mailto: URI scheme for each contact card
+def test_contact_cards_email(driver):
+    main_page = MainPage(driver)
+    main_page.click_agree_cookie()
+    contact_card_info = main_page.get_contact_cards_email()
+
+    logger.info(f"{contact_card_info}")
+
+    if contact_card_info.startswith('Missing'):
+        logger.info(f"*********{contact_card_info}*********")
+        assert False, 'Missing valid mailto: URI scheme in a contact card'
+    elif contact_card_info.startswith('All'):
+        logger.info("*********All contact cards have valid mailto: URI scheme*********")
+        assert True

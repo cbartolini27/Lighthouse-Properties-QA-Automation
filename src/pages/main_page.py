@@ -161,3 +161,66 @@ class MainPage(BasePage):
         )
         zemes_button.click()     
     
+    '''
+        Gets contact information from people man like forreal
+    '''
+    #Contact card information 
+    def get_num_contact_cards(self):
+        contact_cards = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_all_elements_located(locator.MainPageLocators.CONTACT_CARD)
+        )
+        #Store contact cards into tuple
+        return len(contact_cards)  
+   
+   #Gets phone number for each contact card, then returns if there is a valid tel: URI scheme for the user to be redirected to
+    def get_contact_cards_phone(self):
+        contacts = {}
+        contact_cards = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_all_elements_located(locator.MainPageLocators.CONTACT_CARD)
+        )
+        
+        #Getting contacts name and contacts number
+        for contact in contact_cards:
+            get_name = contact.find_element(By.CLASS_NAME, 'contact-name').text
+            number_link = contact.find_elements(By.TAG_NAME,'a')[0].get_attribute('href')
+            contacts[number_link] = get_name
+        
+        #Putting the keys into a list so we can iterate through them and check to see if there is 'tel:' URI scheme
+        all_phone_links = list(contacts.keys())
+       
+        #We want to specify whos phone number is actually missing if we want to iterate through all of the contact cards
+        for phone_number in all_phone_links:
+            if phone_number[0:4] != 'tel:':
+                return f"Missing valid phone number 'tel:' URI scheme for: {contacts.get(phone_number)}"
+            
+        return "All contact cards have valid 'tel:' URI scheme"
+    
+    
+    '''
+    Gets email for each contact card, then returns if there is a valid mailto: URI scheme for the user to be redirected to.
+    As of right now all contact cards share the same email, therefore the dictionary will get overwritten, no duplicates values
+    dictionaries so you will only have one contact and the shared email to be evaluated. Set into place for when contacts will 
+    eventually have different emails
+    '''
+    def get_contact_cards_email(self):
+        contacts = {}
+        contact_cards = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_all_elements_located(locator.MainPageLocators.CONTACT_CARD)
+        )
+        
+        #Getting contacts name and contacts email
+        for contact in contact_cards:
+            get_name = contact.find_element(By.CLASS_NAME, 'contact-name').text
+            email_link = contact.find_elements(By.TAG_NAME,'a')[1].get_attribute('href')
+            contacts[email_link] = get_name
+        
+        #Putting the keys into a list so we can iterate through them and check to see if there is 'tel:' URI scheme
+        all_email_links = list(contacts.keys())
+        #We want to specify whos phone number is actually missing if we want to iterate through all of the contact cards
+        for email in all_email_links:
+            if email[:7] != 'mailto:':
+                return f"Missing valid 'mailto:' URI scheme for: {contacts.get(email_link)}"
+           
+        return "All contact cards have valid 'mailto:' URI scheme"
+
+        

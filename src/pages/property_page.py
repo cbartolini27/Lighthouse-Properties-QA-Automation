@@ -45,4 +45,4 @@ class PropertyPage(BasePage):
         get_src = get_img.get_attribute('src')
         return get_src
     
-        
+    

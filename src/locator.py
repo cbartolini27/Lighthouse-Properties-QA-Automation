@@ -25,6 +25,11 @@ class MainPageLocators(object):
     KOMERCIPASUMI_BUTTON = (By.XPATH, "//button[contains(text(), 'Komercīpašumi')]")
     ZEMES_BUTTON = (By.XPATH, "//button[contains(text(), 'Zemes')]")
 
+    #Contact card information
+    CONTACT_CARD = (By.XPATH,"//div[@class= 'contact-card']")
+    
+
+
 class PropertyPageLocators(object):
     #Viewing property
     LEFT_IMAGE_ARROW = (By.XPATH,"//div[contains(@class, 'scroll-button-left-container')]")
