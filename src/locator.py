@@ -27,8 +27,14 @@ class MainPageLocators(object):
 
     #Contact card information
     CONTACT_CARD = (By.XPATH,"//div[@class= 'contact-card']")
-    
 
+    #Social media links
+    INSTAGRAM_LINK = (By.XPATH,"//a[contains(@href, 'https://www.instagram.com/lighthouse_properties')]")
+    FACEBOOK_LINK = (By.XPATH,"//a[contains(@href, 'https://www.facebook.com/LighthousePropertiesVentspils')]")
+
+    #Office location links
+    RIGA_OFFICE = (By.XPATH,"//a[contains(@href, 'https://www.google.com/maps/search/?api=1&query=Strēlnieku iela 5, Centra rajons, Rīga, LV-1010, Latvia')]")
+    VENTSPILS_OFFICE = (By.XPATH, "//a[contains(@href, 'https://www.google.com/maps/search/?api=1&query=Kuldīgas iela 17, Ventspils, Latvia')]")
 
 class PropertyPageLocators(object):
     #Viewing property

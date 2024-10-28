@@ -223,4 +223,32 @@ class MainPage(BasePage):
            
         return "All contact cards have valid 'mailto:' URI scheme"
 
-        
+    '''
+    Social Media
+    '''
+    def click_instagram(self):
+        instagram_link = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator.MainPageLocators.INSTAGRAM_LINK)
+        )
+        instagram_link.click()
+
+    def click_facebook(self):
+        facebook_link = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator.MainPageLocators.FACEBOOK_LINK)
+        )
+        facebook_link.click()
+
+    '''
+    Office Locations
+    '''
+    def click_riga_office(self):
+        riga_link = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator.MainPageLocators.RIGA_OFFICE)
+        )
+        riga_link.click()
+    
+    def click_ventspils_office(self):
+        ventspils_link = WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located(locator.MainPageLocators.VENTSPILS_OFFICE)
+        )
+        ventspils_link.click()

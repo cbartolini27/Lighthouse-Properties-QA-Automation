@@ -1,6 +1,7 @@
 import pytest
 import time
 from selenium import webdriver
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.main_page import MainPage
@@ -247,3 +248,139 @@ def test_contact_cards_email(driver):
     elif contact_card_info.startswith('All'):
         logger.info("*********All contact cards have valid mailto: URI scheme*********")
         assert True
+
+'''
+Testing proper redirection of social media links
+'''
+def test_instagram_link(driver):
+    main_page = MainPage(driver)
+    expected_url = 'https://www.instagram.com/lighthouse_properties/'
+    original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
+   
+    
+    main_page.click_agree_cookie()
+    main_page.click_instagram()
+    logger.info("*********Clicked Instagram link*********")
+    
+    WebDriverWait(driver, 10).until(
+        EC.number_of_windows_to_be(2)
+    )
+    
+    #window_handle = Returns a list of all currently open windows handles at the time it is called
+    new_window = [window for window in driver.window_handles if window != original_window][0]
+    driver.switch_to.window(new_window)
+    
+    WebDriverWait(driver, 10).until(
+        EC.url_to_be('https://www.instagram.com/lighthouse_properties/')
+    )
+
+    current_url = driver.current_url
+    logger.info(f"*********Current url: {current_url}*********")
+    
+    if current_url == expected_url:
+        logger.info("*********Redirected to Instagram page successfully*********")
+        assert True
+    else:
+        logger.info("*********Redirection to Instagram page unsuccessful*********")
+        assert False, 'Redirection to Instagram page unsuccessful'
+
+def test_facebook_link(driver):
+    main_page = MainPage(driver)
+    expected_url = 'https://www.facebook.com/LighthousePropertiesVentspils'
+    original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
+   
+    
+    main_page.click_agree_cookie()
+    main_page.click_facebook()
+    logger.info("*********Clicked Facebook link*********")
+    
+    WebDriverWait(driver, 10).until(
+        EC.number_of_windows_to_be(2)
+    )
+    
+    #window_handle = Returns a list of all currently open windows handles at the time it is called
+    new_window = [window for window in driver.window_handles if window != original_window][0]
+    driver.switch_to.window(new_window)
+    
+    WebDriverWait(driver, 10).until(
+        EC.url_to_be('https://www.facebook.com/LighthousePropertiesVentspils')
+    )
+
+    current_url = driver.current_url
+    logger.info(f"*********Current url: {current_url}*********")
+    
+    if current_url == expected_url:
+        logger.info("*********Redirected to Facebook page successfully*********")
+        assert True
+    else:
+        logger.info("*********Redirection to Facebook page unsuccessful*********")
+        assert False, 'Redirection to Facebook page unsuccessful'
+
+'''
+Tests to see if we have redirected to the appropriate office location on google maps
+'''
+#Tests to see if we successfully redirected to the Riga office location on google maps
+def test_riga_office(driver):
+    main_page = MainPage(driver)
+    expected_url = 'https://www.google.com/maps/place/Str%C4%93lnieku+iela+5,+Centra+rajons,+R%C4%ABga,+LV-1010,+Latvia/@56.9594841,24.107545,17z/data=!3m1!4b1!4m6!3m5!1s0x46eecfc5ad5d27e5:0xcb91633e8dee30c5!8m2!3d56.9594841!4d24.107545!16s%2Fg%2F11c5p0_t82?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D'
+    original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
+   
+
+    main_page.click_agree_cookie()
+    main_page.click_riga_office()
+    logger.info("*********Clicked Riga Office link*********")
+   
+    
+    WebDriverWait(driver, 10).until(
+        EC.number_of_windows_to_be(2)
+    )
+
+    new_window = [window for window in driver.window_handles if window != original_window][0]
+    driver.switch_to.window(new_window)
+    
+    WebDriverWait(driver, 10).until(
+        EC.url_to_be('https://www.google.com/maps/place/Str%C4%93lnieku+iela+5,+Centra+rajons,+R%C4%ABga,+LV-1010,+Latvia/@56.9594841,24.107545,17z/data=!3m1!4b1!4m6!3m5!1s0x46eecfc5ad5d27e5:0xcb91633e8dee30c5!8m2!3d56.9594841!4d24.107545!16s%2Fg%2F11c5p0_t82?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D')
+    )
+
+    current_url = driver.current_url
+    logger.info(f"*********Current url: {current_url}*********")
+    
+    if current_url == expected_url:
+        logger.info("*********Redirected to google maps for Riga office location successfully*********")
+        assert True
+    else:
+        logger.info("*********Redirection to google maps for Riga office location unsuccessful*********")
+        assert False, 'Redirection to google maps for Riga office location unsuccessful'
+
+#Tests to see if we successfully redirected to the Ventspils office location on google maps
+def test_ventspils_office(driver):
+    main_page = MainPage(driver)
+    expected_url = 'https://www.google.com/maps/place/Kuld%C4%ABgas+iela+17,+Ventspils,+LV-3601,+Latvia/@57.3942605,21.565763,17z/data=!3m1!4b1!4m6!3m5!1s0x46f1c8fac82ae731:0x5df04224876383a9!8m2!3d57.3942605!4d21.565763!16s%2Fg%2F11cscpfyk_?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D'
+    original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
+   
+
+    main_page.click_agree_cookie()
+    main_page.click_ventspils_office()
+    logger.info("*********Clicked Ventspils Office link*********")
+   
+    
+    WebDriverWait(driver, 10).until(
+        EC.number_of_windows_to_be(2)
+    )
+
+    new_window = [window for window in driver.window_handles if window != original_window][0]
+    driver.switch_to.window(new_window)
+    
+    WebDriverWait(driver, 10).until(
+        EC.url_to_be('https://www.google.com/maps/place/Kuld%C4%ABgas+iela+17,+Ventspils,+LV-3601,+Latvia/@57.3942605,21.565763,17z/data=!3m1!4b1!4m6!3m5!1s0x46f1c8fac82ae731:0x5df04224876383a9!8m2!3d57.3942605!4d21.565763!16s%2Fg%2F11cscpfyk_?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D')
+    )
+
+    current_url = driver.current_url
+    logger.info(f"*********Current url: {current_url}*********")
+    
+    if current_url == expected_url:
+        logger.info("*********Redirected to google maps for Ventspils office location successfully*********")
+        assert True
+    else:
+        logger.info("*********Redirection to google maps for Ventspils office location unsuccessful*********")
+        assert False, 'Redirection to google maps for Ventspils office location unsuccessful'
