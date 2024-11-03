@@ -322,7 +322,9 @@ Tests to see if we have redirected to the appropriate office location on google 
 #Tests to see if we successfully redirected to the Riga office location on google maps
 def test_riga_office(driver):
     main_page = MainPage(driver)
-    expected_url = 'https://www.google.com/maps/place/Str%C4%93lnieku+iela+5,+Centra+rajons,+R%C4%ABga,+LV-1010,+Latvia/@56.9594841,24.107545,17z/data=!3m1!4b1!4m6!3m5!1s0x46eecfc5ad5d27e5:0xcb91633e8dee30c5!8m2!3d56.9594841!4d24.107545!16s%2Fg%2F11c5p0_t82?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D'
+    #Becuase google dynamically changes their links these two components in the url should remain the same. So we use these for comparison
+    expected_url_part = 'https://www.google.com/maps'
+    expected_url_place = 'Str%C4%93lnieku%20iela%205' 
     original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
    
 
@@ -338,14 +340,11 @@ def test_riga_office(driver):
     new_window = [window for window in driver.window_handles if window != original_window][0]
     driver.switch_to.window(new_window)
     
-    WebDriverWait(driver, 10).until(
-        EC.url_to_be('https://www.google.com/maps/place/Str%C4%93lnieku+iela+5,+Centra+rajons,+R%C4%ABga,+LV-1010,+Latvia/@56.9594841,24.107545,17z/data=!3m1!4b1!4m6!3m5!1s0x46eecfc5ad5d27e5:0xcb91633e8dee30c5!8m2!3d56.9594841!4d24.107545!16s%2Fg%2F11c5p0_t82?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D')
-    )
 
     current_url = driver.current_url
     logger.info(f"*********Current url: {current_url}*********")
     
-    if current_url == expected_url:
+    if (expected_url_part in current_url) and (expected_url_place in current_url):
         logger.info("*********Redirected to google maps for Riga office location successfully*********")
         assert True
     else:
@@ -355,7 +354,9 @@ def test_riga_office(driver):
 #Tests to see if we successfully redirected to the Ventspils office location on google maps
 def test_ventspils_office(driver):
     main_page = MainPage(driver)
-    expected_url = 'https://www.google.com/maps/place/Kuld%C4%ABgas+iela+17,+Ventspils,+LV-3601,+Latvia/@57.3942605,21.565763,17z/data=!3m1!4b1!4m6!3m5!1s0x46f1c8fac82ae731:0x5df04224876383a9!8m2!3d57.3942605!4d21.565763!16s%2Fg%2F11cscpfyk_?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D'
+    #Becuase google dynamically changes their links these two components in the url should remain the same. So we use these for comparison
+    expected_url_part = 'https://www.google.com/maps'
+    expected_url_place = 'Ventspils'
     original_window = driver.current_window_handle #Returns a string of the current url, used for comparison
    
 
@@ -368,17 +369,21 @@ def test_ventspils_office(driver):
         EC.number_of_windows_to_be(2)
     )
 
+    logger.info(f"DELETE: Found two windows")
+
     new_window = [window for window in driver.window_handles if window != original_window][0]
     driver.switch_to.window(new_window)
     
-    WebDriverWait(driver, 10).until(
-        EC.url_to_be('https://www.google.com/maps/place/Kuld%C4%ABgas+iela+17,+Ventspils,+LV-3601,+Latvia/@57.3942605,21.565763,17z/data=!3m1!4b1!4m6!3m5!1s0x46f1c8fac82ae731:0x5df04224876383a9!8m2!3d57.3942605!4d21.565763!16s%2Fg%2F11cscpfyk_?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D')
-    )
+    logger.info("DELETE: We successfully switched window")
+
+   
+
+    logger.info("DELETE: The url is now set to be google maps")
 
     current_url = driver.current_url
     logger.info(f"*********Current url: {current_url}*********")
     
-    if current_url == expected_url:
+    if (expected_url_part in current_url) and (expected_url_place in current_url):
         logger.info("*********Redirected to google maps for Ventspils office location successfully*********")
         assert True
     else:
