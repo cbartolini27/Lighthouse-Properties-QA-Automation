@@ -1,46 +1,132 @@
-2024-11-03 16:50:39:INFO:*********Setting up WebDriver*********
-2024-11-03 16:50:41:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
-2024-11-03 16:50:41:INFO:*********click_property_type_privatmajas successfully clicked: Priv\u0101tm\u0101jas*********
-2024-11-03 16:50:41:INFO:*********Forward navigation check*********
-2024-11-03 16:50:42:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:50:42:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-11-03 16:50:43:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-11-03 16:50:43:INFO:*********Forward navigation passed*********
-2024-11-03 16:50:43:INFO:*********Beginning backward navigation*********
-2024-11-03 16:50:43:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-11-03 16:50:43:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-11-03 16:50:44:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:50:44:INFO:*********Backward navigation passed*********
-2024-11-03 16:50:50:INFO:*********Setting up WebDriver*********
-2024-11-03 16:50:52:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
-2024-11-03 16:50:52:INFO:*********click_property_type_dzivokli successfully clicked: Dz\u012bvok\u013ci*********
-2024-11-03 16:50:52:INFO:*********Forward navigation check*********
-2024-11-03 16:50:53:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:50:53:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-11-03 16:50:54:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-11-03 16:50:54:INFO:*********Forward navigation passed*********
-2024-11-03 16:50:54:INFO:*********Beginning backward navigation*********
-2024-11-03 16:50:54:INFO:*********Page 3 has the correct number of properties = 6*********
-2024-11-03 16:50:54:INFO:*********Page 2 has the correct number of properties = 6*********
-2024-11-03 16:50:54:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:50:54:INFO:*********Backward navigation passed*********
-2024-11-03 16:51:00:INFO:*********Setting up WebDriver*********
-2024-11-03 16:51:03:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
-2024-11-03 16:51:03:INFO:*********click_property_type_komercipasumi successfully clicked: Komerc\u012bpa嗽mi*********
-2024-11-03 16:51:03:INFO:*********Forward navigation check*********
-2024-11-03 16:51:03:INFO:*********Page 1 has the correct number of properties = 4*********
-2024-11-03 16:51:03:INFO:*********Forward navigation passed*********
-2024-11-03 16:51:03:INFO:*********Beginning backward navigation*********
-2024-11-03 16:51:03:INFO:*********Page 1 has the correct number of properties = 4*********
-2024-11-03 16:51:03:INFO:*********Backward navigation passed*********
-2024-11-03 16:51:09:INFO:*********Setting up WebDriver*********
-2024-11-03 16:51:11:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
-2024-11-03 16:51:11:INFO:*********click_property_type_zemes successfully clicked: Zemes*********
-2024-11-03 16:51:11:INFO:*********Forward navigation check*********
-2024-11-03 16:51:12:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:51:12:INFO:*********Page 2 has the correct number of properties = 3*********
-2024-11-03 16:51:12:INFO:*********Forward navigation passed*********
-2024-11-03 16:51:12:INFO:*********Beginning backward navigation*********
-2024-11-03 16:51:12:INFO:*********Page 2 has the correct number of properties = 3*********
-2024-11-03 16:51:13:INFO:*********Page 1 has the correct number of properties = 6*********
-2024-11-03 16:51:13:INFO:*********Backward navigation passed*********
+2024-11-05 16:04:29:INFO:*********Setting up WebDriver*********
+2024-11-05 16:04:29:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:14:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:14:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:17:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:17:INFO:*********Agree button successfully clicked*********
+2024-11-05 16:07:18:INFO:*********Cookies retrieved: [{'domain': 'www.lighthouseproperties.lv', 'expiry': 1762358837, 'httpOnly': False, 'name': 'ga-disable', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'false'}, {'domain': 'www.lighthouseproperties.lv', 'httpOnly': False, 'name': 'localConsent', 'path': '/', 'sameSite': 'Lax', 'secure': False, 'value': 'true'}]*********
+2024-11-05 16:07:18:INFO:*********Length of cookie string: 2*********
+2024-11-05 16:07:18:INFO:*********'ga-disable' cookie is set correctly!*********
+2024-11-05 16:07:18:INFO:*********'localConsent' cookie is set correctly!*********
+2024-11-05 16:07:18:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:18:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:20:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:20:INFO:*********Reject button successfully clicked*********
+2024-11-05 16:07:21:INFO:*********Cookies retrieved: []*********
+2024-11-05 16:07:21:INFO:*********Length of cookie string: 0*********
+2024-11-05 16:07:21:INFO:*********Cookies successfully rejected*********
+2024-11-05 16:07:21:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:21:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:22:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:25:INFO:*********click_privacy_policy successfully clicked: privﾄ》uma politiku*********
+2024-11-05 16:07:28:INFO:*********Successfully opened privacy policy page*********
+2024-11-05 16:07:29:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:29:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:30:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:33:INFO:*********click_privacy_policy_second successfully clicked: Lasﾄｫt privﾄ》uma politiku*********
+2024-11-05 16:07:36:INFO:*********Successfully opened privacy policy page*********
+2024-11-05 16:07:36:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:36:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:37:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:39:INFO:*********Successfully navigated to home page*********
+2024-11-05 16:07:39:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:39:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:42:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:43:INFO:*********Successfully opened seller page*********
+2024-11-05 16:07:43:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:43:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:44:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:44:INFO:*********Successfully opened buyer page*********
+2024-11-05 16:07:44:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:44:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:46:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:46:INFO:*********Successfully opened about us page*********
+2024-11-05 16:07:46:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:46:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:47:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:47:INFO:*********click_property_type_privatmajas successfully clicked: Privﾄ》mﾄ）as*********
+2024-11-05 16:07:47:INFO:*********Forward navigation check*********
+2024-11-05 16:07:47:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:48:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-11-05 16:07:48:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-11-05 16:07:48:INFO:*********Forward navigation passed*********
+2024-11-05 16:07:48:INFO:*********Beginning backward navigation*********
+2024-11-05 16:07:49:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-11-05 16:07:49:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-11-05 16:07:50:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:50:INFO:*********Backward navigation passed*********
+2024-11-05 16:07:50:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:50:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:51:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:51:INFO:*********click_property_type_dzivokli successfully clicked: Dzﾄｫvokﾄｼi*********
+2024-11-05 16:07:51:INFO:*********Forward navigation check*********
+2024-11-05 16:07:51:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:52:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-11-05 16:07:53:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-11-05 16:07:53:INFO:*********Forward navigation passed*********
+2024-11-05 16:07:53:INFO:*********Beginning backward navigation*********
+2024-11-05 16:07:53:INFO:*********Page 3 has the correct number of properties = 6*********
+2024-11-05 16:07:53:INFO:*********Page 2 has the correct number of properties = 6*********
+2024-11-05 16:07:54:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:54:INFO:*********Backward navigation passed*********
+2024-11-05 16:07:54:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:54:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:55:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:55:INFO:*********click_property_type_komercipasumi successfully clicked: Komercﾄｫpaﾅ｡umi*********
+2024-11-05 16:07:55:INFO:*********Forward navigation check*********
+2024-11-05 16:07:55:INFO:*********Page 1 has the correct number of properties = 4*********
+2024-11-05 16:07:55:INFO:*********Forward navigation passed*********
+2024-11-05 16:07:55:INFO:*********Beginning backward navigation*********
+2024-11-05 16:07:55:INFO:*********Page 1 has the correct number of properties = 4*********
+2024-11-05 16:07:55:INFO:*********Backward navigation passed*********
+2024-11-05 16:07:56:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:56:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:07:57:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:07:57:INFO:*********click_property_type_zemes successfully clicked: Zemes*********
+2024-11-05 16:07:57:INFO:*********Forward navigation check*********
+2024-11-05 16:07:57:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:58:INFO:*********Page 2 has the correct number of properties = 3*********
+2024-11-05 16:07:58:INFO:*********Forward navigation passed*********
+2024-11-05 16:07:58:INFO:*********Beginning backward navigation*********
+2024-11-05 16:07:58:INFO:*********Page 2 has the correct number of properties = 3*********
+2024-11-05 16:07:58:INFO:*********Page 1 has the correct number of properties = 6*********
+2024-11-05 16:07:58:INFO:*********Backward navigation passed*********
+2024-11-05 16:07:58:INFO:*********Setting up WebDriver*********
+2024-11-05 16:07:58:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:00:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:00:INFO:*********Number of property images: 11*********
+2024-11-05 16:08:01:INFO:*********Src for each img: ['https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2F14a8fcda470790d181acd61a5c8ed43094c9bbb7-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fab483d43e4622da06f3885b3b4633438d5f77795-3840x2160.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fd63085701abe943aefa6309a54960409594a6d8a-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2F7ae8ccebfb5e58ae1496558c5128a20473cb5f18-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2F2132f674106124d1f317802f7264c8b1ad3dc487-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2F2056f5bf9af1bc133c479840d3e1ecb85fe6bdb8-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fefabe8c5da3e052bbaf3c8c5e195b5543c6f64ca-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fbb059a6bf958d32ced5b846fcc30a7cff7b0a4ef-4032x2268.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fc0bbd0569d1311f4f25ba2ea87af8a5f8f6262b0-3840x2160.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fda37739fb180d23b35e8cbaee93fd06f1851574d-3840x2160.jpg&w=3840&q=75', 'https://www.lighthouseproperties.lv/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fj6z3c6w5%2Fproduction%2Fd447568160b096302a7f19de22f973367d99ae84-3840x2160.jpg&w=3840&q=75']*********
+2024-11-05 16:08:01:INFO:*********You have no duplicates in images for img*********
+2024-11-05 16:08:01:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:01:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:03:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:03:INFO:*********All contact cards have valid tel: URI scheme*********
+2024-11-05 16:08:03:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:03:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:04:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:04:INFO:All contact cards have valid 'mailto:' URI scheme
+2024-11-05 16:08:04:INFO:*********All contact cards have valid mailto: URI scheme*********
+2024-11-05 16:08:05:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:05:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:06:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:06:INFO:*********Clicked Instagram link*********
+2024-11-05 16:08:07:INFO:*********Current url: https://www.instagram.com/lighthouse_properties/*********
+2024-11-05 16:08:07:INFO:*********Redirected to Instagram page successfully*********
+2024-11-05 16:08:07:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:07:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:08:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:08:INFO:*********Clicked Facebook link*********
+2024-11-05 16:08:09:INFO:*********Current url: https://www.facebook.com/LighthousePropertiesVentspils*********
+2024-11-05 16:08:09:INFO:*********Redirected to Facebook page successfully*********
+2024-11-05 16:08:09:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:09:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:11:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:11:INFO:*********Clicked Riga Office link*********
+2024-11-05 16:08:12:INFO:*********Current url: https://www.google.com/maps/search/?api=1&query=Str%C4%93lnieku%20iela%205,%20Centra%20rajons,%20R%C4%ABga,%20LV-1010,%20Latvia*********
+2024-11-05 16:08:12:INFO:*********Redirected to google maps for Riga office location successfully*********
+2024-11-05 16:08:12:INFO:*********Setting up WebDriver*********
+2024-11-05 16:08:12:WARNING:Exception managing chrome: Unable to discover proper chromedriver version in offline mode
+2024-11-05 16:08:13:INFO:*********Navigated to https://www.lighthouseproperties.lv/*********
+2024-11-05 16:08:13:INFO:*********Clicked Ventspils Office link*********
+2024-11-05 16:08:14:INFO:*********Current url: https://www.google.com/maps/search/?api=1&query=Kuld%C4%ABgas%20iela%2017,%20Ventspils,%20Latvia*********
+2024-11-05 16:08:14:INFO:*********Redirected to google maps for Ventspils office location successfully*********

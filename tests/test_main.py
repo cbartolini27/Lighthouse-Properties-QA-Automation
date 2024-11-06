@@ -3,6 +3,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from src.pages.main_page import MainPage
 from src.pages.property_page import PropertyPage
@@ -14,15 +15,19 @@ logger = Log_maker.log_gen()
 
 @pytest.fixture
 def driver(): 
+    chrome_options = Options()
+    chrome_options.add_argument("--headless") #Runs chrome in headless mode, necessary for docker
+    chrome_options.add_argument("--no-sandbox") #Disables the sandbox, needed for Chrome in docker
+    chrome_options.add_argument("--disable-dev-shm-usage") #Reduces memory usage, helps prevent crashes in Docker
 
     logger.info("*********Setting up WebDriver*********")
-    service = Service(executable_path=r"C:\Users\Christian Bartolini\Desktop\Selenium\chromedriver-win64\chromedriver-win64\chromedriver.exe")
-    driver = webdriver.Chrome(service=service)
+   
+    driver = webdriver.Chrome(options = chrome_options)
     driver.get("https://www.lighthouseproperties.lv/")
-    
+   
     logger.info("*********Navigated to https://www.lighthouseproperties.lv/*********")
     yield driver
-    
+   
     driver.quit()
 
 def test_agree_button_cookies(driver):
@@ -369,16 +374,9 @@ def test_ventspils_office(driver):
         EC.number_of_windows_to_be(2)
     )
 
-    logger.info(f"DELETE: Found two windows")
 
     new_window = [window for window in driver.window_handles if window != original_window][0]
     driver.switch_to.window(new_window)
-    
-    logger.info("DELETE: We successfully switched window")
-
-   
-
-    logger.info("DELETE: The url is now set to be google maps")
 
     current_url = driver.current_url
     logger.info(f"*********Current url: {current_url}*********")
