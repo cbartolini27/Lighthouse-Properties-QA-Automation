@@ -30,7 +30,7 @@ For added convenience, you can use the provided shell script to automate the Doc
 **Using the shell script**
 1. **Ensure Execute Permissions:** Before running the script, make sure it has execute permissions: **chmod +x run_docker_tests.sh**
 2. **Run the Shell Script:**
-The shell script will automatically **build the Docker image** and **run the container** with the log mounting setup. This method is ideal for quickly starting the container without manually entering Docker commands.
+The shell script will automatically **build the Docker image** and **run the container** with the log mounting setup. This method is ideal for quickly starting the container without manually entering Docker commands.:
  **sudo ./run_docker_tests.sh**
 
 ## Note on Permissions:
